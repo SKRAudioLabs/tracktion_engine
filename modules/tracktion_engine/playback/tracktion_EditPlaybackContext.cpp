@@ -44,7 +44,7 @@ namespace EditPlaybackContextInternal
         if (! getAudioWorkgroupFlag())
             return {};
 
-        return e.getDeviceManager().deviceManager.getDeviceAudioWorkgroup();
+        return e.getDeviceManager().deviceManager->getDeviceAudioWorkgroup();
     }
 
     inline size_t getMaxNumThreadsToUse (Edit& edit)

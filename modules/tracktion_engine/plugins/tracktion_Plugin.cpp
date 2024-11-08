@@ -466,7 +466,7 @@ void Plugin::baseClassInitialise (const PluginInitialisationInfo& info)
         if (initialiseCount++ == 0 || sampleRateOrBlockSizeChanged)
         {
             CRASH_TRACER
-             isInitialisingFlag = true;
+            isInitialisingFlag = true;
             initialise (info);
             isInitialisingFlag = false;
         }
@@ -474,7 +474,7 @@ void Plugin::baseClassInitialise (const PluginInitialisationInfo& info)
         {
             CRASH_TRACER
             initialiseWithoutStopping (info);
-            isUpdatingWithoutStopping = true;
+            hasUpdatedWithoutStopping = true;
         }
     }
 

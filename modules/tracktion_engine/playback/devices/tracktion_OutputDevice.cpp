@@ -64,17 +64,6 @@ juce::String OutputDevice::getSelectableDescription()
     return name + " (" + TRANS(type) + ")";
 }
 
-juce::String OutputDevice::getDeviceID() const
-{
-    auto n = getName();
-
-    if (isMidi())
-        n += TRANS("MIDI");
-    else
-        n += engine.getDeviceManager().deviceManager->getCurrentAudioDeviceType();
-
-    return juce::String::toHexString (n.hashCode());
-}
 
 bool OutputDevice::isEnabled() const
 {

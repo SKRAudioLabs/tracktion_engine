@@ -208,7 +208,7 @@ public:
         Engine& engine;
     };
 
-    TracktionEngineAudioDeviceManager deviceManager { engine };
+    std::unique_ptr<TracktionEngineAudioDeviceManager> deviceManager;
 
     //==============================================================================
     std::unique_ptr<HostedAudioDeviceInterface> hostedAudioDeviceInterface;
