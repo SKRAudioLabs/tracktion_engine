@@ -1,12 +1,9 @@
 var searchData=
 [
-  ['scaletype_12776',['ScaleType',['../classtracktion_1_1engine_1_1Scale.html#a52437d60f63fb74c47254de4751aec0e',1,'tracktion::engine::Scale']]],
-  ['setnamemode_12777',['SetNameMode',['../classtracktion_1_1engine_1_1ProjectItem.html#adc684adf3e111a2244fb8c0f0a9f38f5',1,'tracktion::engine::ProjectItem']]],
-  ['settingid_12778',['SettingID',['../namespacetracktion_1_1engine.html#aef0092bdbd8a28c3968f7f81912f815e',1,'tracktion::SettingID()'],['../namespacetracktion_1_1engine.html#aef0092bdbd8a28c3968f7f81912f815e',1,'tracktion::engine::SettingID()']]],
-  ['srcchannels_12779',['SrcChannels',['../structtracktion_1_1engine_1_1MakeMonoEffect.html#ac18d60d1750340975f985c76013ec13e',1,'tracktion::engine::MakeMonoEffect']]],
-  ['state_12780',['State',['../classtracktion_1_1engine_1_1LinEnvelope.html#ae5add9a31285d6c029daeca514a46438',1,'tracktion::engine::LinEnvelope']]],
-  ['steps_12781',['Steps',['../classtracktion_1_1engine_1_1Scale.html#a440c2752d50115f83ba28784b4e317e5',1,'tracktion::engine::Scale']]],
-  ['syncpitch_12782',['SyncPitch',['../classtracktion_1_1engine_1_1WaveNodeRealTime.html#af292642e27cb2347fb2b23363ac68eec',1,'tracktion::engine::WaveNodeRealTime']]],
-  ['synctempo_12783',['SyncTempo',['../classtracktion_1_1engine_1_1WaveNodeRealTime.html#a83ad7c0014cb30ab5b7e76554cdad3c9',1,'tracktion::engine::WaveNodeRealTime']]],
-  ['synctype_12784',['SyncType',['../classtracktion_1_1engine_1_1Clip.html#af0cfff3f282a7f6b1b92dc5ae61c97b7',1,'tracktion::engine::Clip::SyncType()'],['../namespacetracktion_1_1engine_1_1ModifierCommon.html#a4dcd9d7ff08bc5c648d14f9b798e6276',1,'tracktion::engine::ModifierCommon::SyncType()']]]
+  ['ratetype_14275',['RateType',['../namespacetracktion_1_1engine_1_1ModifierCommon.html#a8196f0dce2231f21fcd54b02462ddacb',1,'tracktion::engine::ModifierCommon']]],
+  ['readahead_14276',['ReadAhead',['../classtracktion_1_1engine_1_1WaveNodeRealTime.html#ad6fef24de866d868234a6d5624f5eebd',1,'tracktion::engine::WaveNodeRealTime']]],
+  ['relationship_14277',['Relationship',['../classtracktion_1_1engine_1_1SelectableClass.html#a200aab7124e35fb928b511a41b71c18a',1,'tracktion::engine::SelectableClass']]],
+  ['renamemode_14278',['RenameMode',['../classtracktion_1_1engine_1_1ProjectItem.html#a4ff8de8ad9bd9e16b03850e1f51b5e82',1,'tracktion::engine::ProjectItem']]],
+  ['rendertype_14279',['RenderType',['../classtracktion_1_1engine_1_1RenderOptions.html#a746fb0730e47bc8ccd5bb16b5ef39c1c',1,'tracktion::engine::RenderOptions']]],
+  ['resamplingquality_14280',['ResamplingQuality',['../namespacetracktion_1_1engine.html#a80cc60aadbaf1dca652f40a5544b3e6b',1,'tracktion::ResamplingQuality()'],['../namespacetracktion_1_1engine.html#a80cc60aadbaf1dca652f40a5544b3e6b',1,'tracktion::engine::ResamplingQuality()']]]
 ];
