@@ -390,17 +390,24 @@ DeviceManager::DeviceManager (Engine& e, const std::shared_ptr<juce::AudioDevice
 
     prepareToStartCaller = std::make_unique<PrepareToStartCaller> (*this);
 
-    if (devMgr == nullptr)
+    if (devMgr != nullptr)
     {
+        // Use the provided AudioDeviceManager
         deviceManager = std::make_unique<TracktionEngineAudioDeviceManager>(e);
+
+        // Copy the device type and setup
+        auto currentType = devMgr->getCurrentAudioDeviceType();
+        deviceManager->setCurrentAudioDeviceType(currentType, true);
+
+        juce::AudioDeviceManager::AudioDeviceSetup setup;
+        devMgr->getAudioDeviceSetup(setup);
+        deviceManager->setAudioDeviceSetup(setup, true);
     }
     else
     {
-        // Cast the shared juce::AudioDeviceManager to TracktionEngineAudioDeviceManager
-        if (auto tracktionDevMgr = dynamic_cast<TracktionEngineAudioDeviceManager*>(devMgr.get()))
-            deviceManager.reset(tracktionDevMgr);
-        else
-            deviceManager = std::make_unique<TracktionEngineAudioDeviceManager>(e);
+        // Create and initialize a new device manager
+        deviceManager = std::make_unique<TracktionEngineAudioDeviceManager>(e);
+        deviceManager->initialiseWithDefaultDevices(2, 2);
     }
 
     deviceManager->addChangeListener (this);
