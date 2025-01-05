@@ -79,7 +79,7 @@ std::vector<Node*> ArrangerLauncherSwitchingNode::getInternalNodes()
     return nodes;
 }
 
-void ArrangerLauncherSwitchingNode::prepareToPlay (const PlaybackInitialisationInfo& info)
+void ArrangerLauncherSwitchingNode::prepareToPlay (const tracktion::graph::PlaybackInitialisationInfo& info)
 {
     const auto props = getNodeProperties();
     const int numChannels = props.numberOfChannels;
@@ -297,19 +297,17 @@ void ArrangerLauncherSwitchingNode::processArranger (ProcessContext& pc, const S
 
 void ArrangerLauncherSwitchingNode::sortPlayingOrQueuedClipsFirst()
 {
-    using enum LaunchHandle::PlayState;
-    using enum LaunchHandle::QueueState;
     sort (launcherNodes,
           [](auto& n1, auto& n2)
               {
                   auto stateToValue = [] (const LaunchHandle& lh)
                   {
-                      if (lh.getPlayingStatus() == playing) return 1;
+                      if (lh.getPlayingStatus() == LaunchHandle::PlayState::playing) return 1;
 
                       if (auto q1 = lh.getQueuedStatus())
                       {
-                          if (q1 == playQueued) return 2;
-                          if (q1 == stopQueued) return 3;
+                          if (q1 == LaunchHandle::QueueState::playQueued) return 2;
+                          if (q1 == LaunchHandle::QueueState::stopQueued) return 3;
                       }
 
                       return 4;
