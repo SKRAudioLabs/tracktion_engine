@@ -64,7 +64,7 @@ void Engine::initialise(const std::shared_ptr<juce::AudioDeviceManager>& devMgr)
     midiLearnState             = std::make_unique<MidiLearnState> (*this);
     renderManager              = std::make_unique<RenderManager> (*this);
     audioFileManager           = std::make_unique<AudioFileManager> (*this);
-    deviceManager              = std::unique_ptr<DeviceManager> (new DeviceManager (*this));
+    deviceManager              = std::unique_ptr<DeviceManager> (new DeviceManager (*this, devMgr));
     midiProgramManager         = std::make_unique<MidiProgramManager> (*this);
     externalControllerManager  = std::unique_ptr<ExternalControllerManager> (new ExternalControllerManager (*this));
     backgroundJobManager       = std::make_unique<BackgroundJobManager>();

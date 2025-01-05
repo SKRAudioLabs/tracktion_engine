@@ -79,10 +79,15 @@ static bool isMicrosoftGSSynth (MidiOutputDevice& mo)
 }
 
 //==============================================================================
-DeviceManager::TracktionEngineAudioDeviceManager::TracktionEngineAudioDeviceManager (Engine& e) : engine (e) {}
+DeviceManager::TracktionEngineAudioDeviceManager::TracktionEngineAudioDeviceManager (Engine& e, const std::shared_ptr<juce::AudioDeviceManager>& devMgr) : 
+    engine (e),
+    extraDeviceManager(devMgr)
+{}
 
 void DeviceManager::TracktionEngineAudioDeviceManager::createAudioDeviceTypes (juce::OwnedArray<juce::AudioIODeviceType>& types)
 {
+    if (extraDeviceManager != nullptr)
+        extraDeviceManager->createAudioDeviceTypes(types);
     if (engine.getEngineBehaviour().addSystemAudioIODeviceTypes())
         juce::AudioDeviceManager::createAudioDeviceTypes (types);
 }
@@ -393,7 +398,7 @@ DeviceManager::DeviceManager (Engine& e, const std::shared_ptr<juce::AudioDevice
     if (devMgr != nullptr)
     {
         // Use the provided AudioDeviceManager
-        deviceManager = std::make_unique<TracktionEngineAudioDeviceManager>(e);
+        deviceManager = std::make_unique<TracktionEngineAudioDeviceManager>(e, devMgr);
 
         // Copy the device type and setup
         auto currentType = devMgr->getCurrentAudioDeviceType();

@@ -202,9 +202,11 @@ public:
     */
     struct TracktionEngineAudioDeviceManager  : public juce::AudioDeviceManager
     {
-        TracktionEngineAudioDeviceManager (Engine&);
+        TracktionEngineAudioDeviceManager (Engine&, const std::shared_ptr<juce::AudioDeviceManager>& devMgr = nullptr);
         void createAudioDeviceTypes (juce::OwnedArray<juce::AudioIODeviceType>&) override;
 
+        // Adding in support for external overriding device managers from other sources.
+        std::shared_ptr<juce::AudioDeviceManager> extraDeviceManager;
         Engine& engine;
     };
 
